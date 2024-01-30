@@ -1,0 +1,12 @@
+{
+  "extends": "@packages/tsconfig",
+  "include": [
+    "**/*.ts",
+    "**/*.cjs",
+    "**/*.js",
+    "**/*.mjs",
+    "**/*.json",
+    "**/esbuild.config.mjs",
+    ".eslintrc.cjs",
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "extends": "@packages/tsconfig",
+  "compilerOptions": {
+    "baseUrl": "."
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.json",
+    "**/*.js",
+    "**/*.mjs",
+    "**/*.cjs",
+    ".eslintrc.cjs"
+  ]
+}

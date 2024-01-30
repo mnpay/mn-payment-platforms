@@ -1,0 +1,34 @@
+{
+  "folders": [
+    {
+      "name": "root",
+      "path": "./"
+    },
+    {
+      "name": "dugaarDeeree",
+      "path": "./packages/dugaarDeeree/"
+    },
+    {
+      "name": "hipay",
+      "path": "./packages/hipay/"
+    }
+  ],
+  "settings": {
+    "javascript.preferences.importModuleSpecifier": "shortest",
+    "files.exclude": {
+      "**/.git": true,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+      "**/Thumbs.db": true,
+      "**/.ruby-lsp": true,
+      ".nx": true,
+      ".yarn": true,
+      "**/node_modules": true
+    },
+    "eslint.workingDirectories": [
+      "./"
+    ]
+  }
+}

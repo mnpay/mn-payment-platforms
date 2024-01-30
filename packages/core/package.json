@@ -1,0 +1,10 @@
+{
+  "name": "@packages/core",
+  "type": "module",
+  "scripts": {
+    "lint": "yarn g:lint"
+  },
+  "dependencies": {
+    "@tsconfig/recommended": "^1.0.3"
+  }
+}
