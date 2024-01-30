@@ -2,7 +2,7 @@ import esbuild from 'esbuild'
 import { nodeExternalsPlugin } from 'esbuild-node-externals'
 
 await esbuild.build({
-  entryPoints: ['src/index.ts'],
+  entryPoints: ['./index.ts'],
   bundle: true,
   outfile: 'dist/index.cjs',
   platform: 'node',

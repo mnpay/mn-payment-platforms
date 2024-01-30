@@ -11,7 +11,15 @@
     {
       "name": "hipay",
       "path": "./packages/hipay/"
-    }
+    },
+    {
+      "name": "core",
+      "path": "./packages/core/"
+    },
+    {
+      "name": "tsconfig",
+      "path": "./packages/tsconfig/"
+    },
   ],
   "settings": {
     "javascript.preferences.importModuleSpecifier": "shortest",
