@@ -1,20 +1,20 @@
-import { dayjs } from '@packages/core'
-import { type Dayjs, type ConfigType } from 'dayjs'
-
 export const useExpiryToken = () => {
-  let tokenExpiryTime: Dayjs | null = null
+  let tokenExpiryTime: number | null = null
 
-  const getNewExpiryTime = () => dayjs().add(1, 'hour')
+  const getNewExpiryTime = () => {
+    const now = new Date().valueOf()
+    return now + 60 * 60 * 1000
+  }
 
-  const setNewExpiryTime = (time: ConfigType) => {
-    tokenExpiryTime = dayjs(time)
+  const setNewExpiryTime = (time: number) => {
+    tokenExpiryTime = time
   }
 
   const getIsExpired = () => {
     if (tokenExpiryTime === null) {
       return true
     }
-    return dayjs().isSameOrAfter(tokenExpiryTime)
+    return tokenExpiryTime < new Date().valueOf()
   }
 
   return {
