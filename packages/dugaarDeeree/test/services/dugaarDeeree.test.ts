@@ -6,7 +6,7 @@ import {
   useDugaarDeeree,
   IntCode,
   type PurchaseInitiateResponse,
-} from 'mn-dugaar-deeree'
+} from 'mn-dugaar-deeree/index'
 import { http, HttpResponse } from 'msw'
 import { server } from 'mn-dugaar-deeree/test/mocks'
 

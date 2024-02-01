@@ -8,7 +8,7 @@ import {
   type DugaarDeereeResponseError,
   Code,
   useDugaarDeeree,
-} from 'mn-dugaar-deeree'
+} from 'mn-dugaar-deeree/index'
 import { HttpResponse, http } from 'msw'
 import { server } from 'mn-dugaar-deeree/test/mocks'
 
