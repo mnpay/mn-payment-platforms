@@ -1,10 +1,10 @@
 import { dayjs } from '@packages/core'
 import { HipayCurrency, HipayRequestName, HipayUrl } from 'mn-hipay/constants'
-import { type HipayDefaultConfig } from 'mn-hipay/definitions'
 import { createHipayRequestHandler } from 'mn-hipay/helpers'
 import { getHipayUrlPath } from 'mn-hipay/lib'
 import { type GetAccessTokenParams, type GetAccessTokenParamsApi } from 'mn-hipay/types'
 import axios from 'axios'
+import { type HipayStore, type HipayConfig } from 'mn-hipay/definitions'
 
 export * from 'mn-hipay/types'
 export * from 'mn-hipay/helpers'
@@ -13,20 +13,15 @@ export * from 'mn-hipay/constants'
 export * from 'mn-hipay/lib'
 export * from 'mn-hipay/errors'
 
-declare module 'axios' {
-  interface AxiosRequestConfig {
-    version?: 'v2'
-    expires?: number
-    accessToken?: string
-  }
-}
-
 // reference https://developers.hipay.mn/token
-export const createHipay = (config: HipayDefaultConfig) => {
+export const createHipay = (config: HipayConfig) => {
   const { baseURL } = config
-  const api = axios.create({ baseURL, version: config.version })
+  const api = axios.create({ baseURL })
+  const store: HipayStore = {
+    config,
+  }
 
-  const _getAccessToken = createHipayRequestHandler(HipayRequestName.accessToken, api, (data) => {
+  const getNewAccessToken = createHipayRequestHandler(HipayRequestName.accessToken, api, store, (data) => {
     return {
       ...data,
       client_id: data?.client_id ?? config.client_id,
@@ -38,15 +33,16 @@ export const createHipay = (config: HipayDefaultConfig) => {
   })
 
   const getAccessToken = async (params?: GetAccessTokenParams) => {
-    const token = await _getAccessToken(params ?? config)
+    const token = await getNewAccessToken(params ?? config)
 
     return token
   }
 
-  const getCard = createHipayRequestHandler(HipayRequestName.cardGet, api)
-  const getCheckout = createHipayRequestHandler(HipayRequestName.getCheckout, api)
+  const getCard = createHipayRequestHandler(HipayRequestName.cardGet, api, store)
+  const getCheckout = createHipayRequestHandler(HipayRequestName.getCheckout, api, store)
+  const removeCard = createHipayRequestHandler(HipayRequestName.cardRemove, api, store)
 
-  const addCard = createHipayRequestHandler(HipayRequestName.cardAdd, api, (data) => {
+  const addCard = createHipayRequestHandler(HipayRequestName.cardAdd, api, store, (data) => {
     return {
       ...data,
       entityId: data.entityId ?? config.client_id,
@@ -55,9 +51,7 @@ export const createHipay = (config: HipayDefaultConfig) => {
     }
   })
 
-  const removeCard = createHipayRequestHandler(HipayRequestName.cardRemove, api)
-
-  const checkout = createHipayRequestHandler(HipayRequestName.checkout, api, (data) => {
+  const checkout = createHipayRequestHandler(HipayRequestName.checkout, api, store, (data) => {
     return {
       ...data,
       entityId: data.entityId ?? config.client_id,
@@ -65,42 +59,46 @@ export const createHipay = (config: HipayDefaultConfig) => {
     }
   })
 
-  const payment = createHipayRequestHandler(HipayRequestName.payment, api, (data) => {
+  const payment = createHipayRequestHandler(HipayRequestName.payment, api, store, (data) => {
     return {
       ...data,
-      access_token: data.access_token ?? api.defaults.accessToken ?? '',
+      access_token: data.access_token ?? store.token?.access_token ?? '',
       entityId: data.entityId ?? config.client_id,
       ipaddress: data.ipaddress ?? '',
     }
   })
 
   const loadAccessToken = async (params?: GetAccessTokenParamsApi) => {
-    const isFreshToken = dayjs().add(5, 'minutes').isBefore(api.defaults.expires)
+    const isFreshToken = dayjs().add(5, 'minutes').isBefore(store.token?.expires)
 
-    if (api.defaults.accessToken && isFreshToken) {
+    if (store.token?.access_token && isFreshToken) {
       return {
-        access_token: api.defaults.accessToken,
-        expires: api.defaults.accessToken,
+        access_token: store.token?.access_token,
+        expires: store.token?.access_token,
       }
     }
 
-    const { access_token: accessToken, expires } = await _getAccessToken(params ?? config)
+    const { access_token: accessToken, expires } = await getNewAccessToken(params ?? config)
 
-    api.defaults.accessToken = accessToken
-    api.defaults.expires = expires * 1000
-    api.defaults.headers.Authorization = `Bearer ${accessToken}`
-
-    return {
-      access_token: api.defaults.accessToken,
-      expires: api.defaults.expires,
+    store.token = {
+      access_token: accessToken,
+      expires: expires * 1000,
     }
   }
 
   api.interceptors.request.use(
     async (requestConfig) => {
-      if (!requestConfig.url?.startsWith(getHipayUrlPath(HipayUrl.accessToken, config))) {
+      const accessTokenUrl = getHipayUrlPath(HipayUrl.accessToken, config)
+      const isOtherThanAccessTokenUrl = !requestConfig.url?.startsWith(accessTokenUrl)
+
+      if (isOtherThanAccessTokenUrl) {
         await loadAccessToken()
+
+        if (store.token) {
+          requestConfig.headers.Authorization = `Bearer ${store.token.access_token}`
+        }
       }
+
       return requestConfig
     },
     async (error) => {
@@ -110,6 +108,10 @@ export const createHipay = (config: HipayDefaultConfig) => {
 
   const getCardAddFormUrl = () => {
     return `${config.baseURL}/${config.version}/card/form`
+  }
+
+  const resetToken = () => {
+    store.token = undefined
   }
 
   return {
@@ -166,5 +168,6 @@ export const createHipay = (config: HipayDefaultConfig) => {
     payment,
     /** Hi-Pay-ийн карт нэмэх цонх */
     getCardAddFormUrl,
+    resetToken,
   }
 }

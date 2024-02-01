@@ -20,11 +20,6 @@ import {
   type HipayGetCheckoutResponseSuccess,
 } from 'mn-hipay/types'
 
-export type HipayDefaultConfig = Omit<GetAccessTokenParamsApi, 'redirect_uri' | 'grant_type'> & {
-  baseURL: string
-  version: 'v2'
-}
-
 export interface RequestResponseConfig {
   [HipayRequestName.accessToken]: {
     params: GetAccessTokenParams

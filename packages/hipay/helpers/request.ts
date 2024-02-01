@@ -1,4 +1,4 @@
-import { type RequestResponseConfig } from 'mn-hipay/definitions'
+import { type HipayStore, type RequestResponseConfig } from 'mn-hipay/definitions'
 import { type HipayRequestName } from 'mn-hipay/constants'
 import { type AxiosInstance } from 'axios'
 import { requestConfig } from 'mn-hipay/configs'
@@ -13,26 +13,28 @@ export const createHipayRequestHandler = <
 >(
   requestName: RequestName,
   api: AxiosInstance,
+  store: HipayStore,
   transformer?: (data: Params) => RequestResponseConfig[RequestName]['axiosParams'],
 ) => {
   const config = requestConfig[requestName]
 
   return async (params: Params): Promise<ResponseData> => {
+    const method = requestConfig[requestName].method.toUpperCase()
     const data = transformer?.(params) ?? params
 
     const url = getHipayUrlPath(config.url, {
       ...data,
-      version: api.defaults.version,
+      version: store.config.version,
     })
 
-    const responseData = (
-      await api<HipayResponse<ResponseData>>({
-        method: requestConfig[requestName].method.toUpperCase(),
-        url,
-        ...(config.dataTransferKey === 'data' ? { data } : {}),
-        ...('access_token' in data ? { headers: { Authorization: `Bearer ${data.access_token}` } } : {}),
-      })
-    ).data
+    const response = await api<HipayResponse<ResponseData>>({
+      method,
+      url,
+      ...(config.dataTransferKey === 'data' ? { data } : {}),
+      ...('access_token' in data ? { headers: { Authorization: `Bearer ${data.access_token}` } } : {}),
+    })
+
+    const responseData = response.data
 
     if (responseData.code === 1 || responseData.code === '1') {
       return responseData

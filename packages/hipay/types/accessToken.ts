@@ -1,4 +1,4 @@
-import { type HipayEntityId, type HipayResponseSuccess } from './core'
+import { type TokenStore, type HipayEntityId, type HipayResponseSuccess } from './core'
 
 export interface GetAccessTokenParams {
   code?: string
@@ -16,7 +16,4 @@ export interface GetAccessTokenParamsApi extends GetAccessTokenParams {
   grant_type: 'authorization_code'
 }
 
-export interface HipayAccessTokenResponseSuccess extends HipayResponseSuccess {
-  access_token: string
-  expires: number
-}
+export interface HipayAccessTokenResponseSuccess extends HipayResponseSuccess, TokenStore {}

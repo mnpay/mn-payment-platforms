@@ -1,11 +1,15 @@
 {
   "name": "mn-dugaar-deeree",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "lint": "yarn g:lint",
-    "test": "yarn g:vitest",
-    "build": "yarn g:build"
+    "test": "yarn g:test",
+    "build": "yarn g:build",
+    "release": "yarn g:publish"
   },
+  "main": "./dist/index.mjs",
+  "types": "./@types/index.d.ts",
   "dependencies": {
     "axios": "^1.6.7"
   },

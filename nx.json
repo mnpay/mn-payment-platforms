@@ -1,6 +1,40 @@
 {
-  "targetDefaults": {},
+  "targetDefaults": {
+    "lint": {
+      "cache": true
+    },
+    "test": {
+      "outputs": [
+        "{projectRoot}/coverage"
+      ],
+      "cache": true
+    },
+    "build": {
+      "dependsOn": [
+        "lint",
+        "test",
+        "^build"
+      ],
+      "outputs": [
+        "{projectRoot}/dist",
+        "{projectRoot}/@types"
+      ],
+      "cache": true
+    },
+    "release": {
+      "dependsOn": [
+        "build"
+      ],
+      "cache": true
+    }
+  },
   "affected": {
     "defaultBase": "main"
-  }
+  },
+  "includeScripts": [
+    "lint",
+    "test",
+    "build",
+    "release"
+  ]
 }

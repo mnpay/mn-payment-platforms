@@ -35,8 +35,12 @@
       "**/.DS_Store": true,
       "**/Thumbs.db": true,
       "**/.ruby-lsp": true,
+      "coverage": true,
       ".nx": true,
       ".yarn": true,
+      ".husky": true,
+      "**/dist": true,
+      "**/@types": true,
       "**/node_modules": true
     },
     "eslint.workingDirectories": [

@@ -1,5 +1,10 @@
 {
   "extends": "@packages/tsconfig",
+  "compilerOptions": {
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationDir": "./@types",
+  },
   "include": [
     "**/*.ts",
     "**/*.cjs",
@@ -10,6 +15,7 @@
     ".lintstagedrc.mjs"
   ],
   "exclude": [
-    "dist"
+    "dist",
+    "@types"
   ]
 }

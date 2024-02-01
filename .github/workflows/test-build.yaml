@@ -1,0 +1,36 @@
+name: Test & Build
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Set yarn version
+        run: yarn set version self
+      
+      - name: Set token
+        run: yarn config set npmAuthToken ${{secrets.NPM_TOKEN}}
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Run build
+        run: yarn build
+
+      - name: Unset token
+        run: yarn config unset npmAuthToken
