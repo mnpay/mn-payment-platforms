@@ -1,4 +1,4 @@
-import { type HipayRequestName } from '@packages/hipay/constants'
+import { type HipayRequestName } from 'mn-hipay/constants'
 import {
   type CardGetParams,
   type CardRemoveParams,
@@ -18,7 +18,7 @@ import {
   type PaymentParams,
   type GetCheckoutParams,
   type HipayGetCheckoutResponseSuccess,
-} from '@packages/hipay/types'
+} from 'mn-hipay/types'
 
 export type HipayDefaultConfig = Omit<GetAccessTokenParamsApi, 'redirect_uri' | 'grant_type'> & {
   baseURL: string

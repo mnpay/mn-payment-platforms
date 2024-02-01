@@ -1,10 +1,13 @@
 {
-  "name": "@packages/dugaar-deeree",
+  "name": "mn-dugaar-deeree",
   "type": "module",
   "scripts": {
     "lint": "yarn g:lint",
     "test": "yarn g:vitest",
     "build": "yarn g:build"
+  },
+  "dependencies": {
+    "axios": "^1.6.7"
   },
   "devDependencies": {
     "@packages/core": "workspace:^"

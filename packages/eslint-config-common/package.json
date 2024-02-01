@@ -1,0 +1,8 @@
+{
+  "name": "eslint-config-common",
+  "type": "commonjs",
+  "private": true,
+  "scripts": {
+    "lint": "yarn g:lint"
+  }
+}

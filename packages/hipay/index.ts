@@ -1,17 +1,17 @@
 import { dayjs } from '@packages/core'
-import { HipayCurrency, HipayRequestName, HipayUrl } from '@packages/hipay/constants'
-import { type HipayDefaultConfig } from '@packages/hipay/definitions'
-import { createHipayRequestHandler } from '@packages/hipay/helpers'
-import { getHipayUrlPath } from '@packages/hipay/lib'
-import { type GetAccessTokenParams, type GetAccessTokenParamsApi } from '@packages/hipay/types'
+import { HipayCurrency, HipayRequestName, HipayUrl } from 'mn-hipay/constants'
+import { type HipayDefaultConfig } from 'mn-hipay/definitions'
+import { createHipayRequestHandler } from 'mn-hipay/helpers'
+import { getHipayUrlPath } from 'mn-hipay/lib'
+import { type GetAccessTokenParams, type GetAccessTokenParamsApi } from 'mn-hipay/types'
 import axios from 'axios'
 
-export * from '@packages/hipay/types'
-export * from '@packages/hipay/helpers'
-export * from '@packages/hipay/configs'
-export * from '@packages/hipay/constants'
-export * from '@packages/hipay/lib'
-export * from '@packages/hipay/errors'
+export * from 'mn-hipay/types'
+export * from 'mn-hipay/helpers'
+export * from 'mn-hipay/configs'
+export * from 'mn-hipay/constants'
+export * from 'mn-hipay/lib'
+export * from 'mn-hipay/errors'
 
 declare module 'axios' {
   interface AxiosRequestConfig {
@@ -37,7 +37,11 @@ export const createHipay = (config: HipayDefaultConfig) => {
     }
   })
 
-  const getAccessToken = async (params?: GetAccessTokenParams) => await _getAccessToken(params ?? config)
+  const getAccessToken = async (params?: GetAccessTokenParams) => {
+    const token = await _getAccessToken(params ?? config)
+
+    return token
+  }
 
   const getCard = createHipayRequestHandler(HipayRequestName.cardGet, api)
   const getCheckout = createHipayRequestHandler(HipayRequestName.getCheckout, api)

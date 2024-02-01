@@ -1,0 +1,14 @@
+{
+  "packages": {
+    ".": {
+      "release-type": "node",
+      "exclude-paths": ["packages"]
+    },
+    "packages/dugaarDeeree": {
+      "release-type": "node"
+    },
+    "packages/hipay": {
+      "release-type": "node"
+    }
+  }
+}

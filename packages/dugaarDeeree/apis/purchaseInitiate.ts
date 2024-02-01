@@ -1,6 +1,6 @@
-import { DugaarDeereeUrl } from '@packages/dugaar-deeree/constants'
-import { useApi } from '@packages/dugaar-deeree/helpers'
-import { type PurchaseInititateParams, type PurchaseInitiateResponse } from '@packages/dugaar-deeree/types'
+import { DugaarDeereeUrl } from 'mn-dugaar-deeree/constants'
+import { useApi } from 'mn-dugaar-deeree/helpers'
+import { type PurchaseInititateParams, type PurchaseInitiateResponse } from 'mn-dugaar-deeree/types'
 
 export const createPurchaseInitiate = useApi<PurchaseInititateParams, PurchaseInitiateResponse>((api) => {
   return async (data) => {

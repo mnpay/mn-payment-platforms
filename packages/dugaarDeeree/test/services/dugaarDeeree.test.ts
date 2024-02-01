@@ -6,9 +6,9 @@ import {
   useDugaarDeeree,
   IntCode,
   type PurchaseInitiateResponse,
-} from '@packages/dugaar-deeree'
+} from 'mn-dugaar-deeree'
 import { http, HttpResponse } from 'msw'
-import { server } from '@packages/dugaar-deeree/test/mocks'
+import { server } from 'mn-dugaar-deeree/test/mocks'
 
 describe('dugaarDeeree', () => {
   let dugaarDeeree: ReturnType<typeof useDugaarDeeree>

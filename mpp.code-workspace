@@ -20,6 +20,10 @@
       "name": "tsconfig",
       "path": "./packages/tsconfig/"
     },
+    {
+      "name": "eslint-config-common",
+      "path": "./packages/eslint-config-common/"
+    },
   ],
   "settings": {
     "javascript.preferences.importModuleSpecifier": "shortest",
@@ -36,7 +40,11 @@
       "**/node_modules": true
     },
     "eslint.workingDirectories": [
-      "./"
+      "./",
+      "./packages/dugaarDeeree",
+      "./packages/hipay",
+      "./packages/core",
+      "./packages/eslint-config-common"
     ]
   }
 }

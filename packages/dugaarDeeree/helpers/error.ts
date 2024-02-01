@@ -1,6 +1,6 @@
-import { Code, codeToErrorMessage } from '@packages/dugaar-deeree/constants'
+import { Code, codeToErrorMessage } from 'mn-dugaar-deeree/constants'
 import { getAxiosError } from '@packages/core'
-import { type DugaarDeereeResponseError } from '@packages/dugaar-deeree/types'
+import { type DugaarDeereeResponseError } from 'mn-dugaar-deeree/types'
 
 export const getDugaarDeereeErrorResponse = (error: unknown) => {
   const axiosError = getAxiosError<DugaarDeereeResponseError>(error)

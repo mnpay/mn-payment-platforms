@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const getHipayUrlPath = <T extends string = string, P extends Record<string, any> = Record<string, any>>(
   rawPath: T,
   params?: P,

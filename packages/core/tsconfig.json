@@ -1,25 +1,5 @@
 {
-  "extends": "@tsconfig/recommended",
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "noEmit": true,
-    "sourceMap": false,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "skipLibCheck": true,
-    "noImplicitAny": false,
-    "strict": true,
-    "strictNullChecks": true,
-    "types": [
-      "vitest/globals"
-    ]
-  },
+  "extends": "@packages/tsconfig",
   "include": [
     "**/*.ts",
     "**/*.json",
@@ -28,9 +8,4 @@
     "**/*.cjs",
     ".eslintrc.cjs"
   ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    ".next"
-  ]
 }

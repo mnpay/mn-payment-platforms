@@ -1,4 +1,4 @@
-import { type Code, type IntCode } from '@packages/dugaar-deeree/constants'
+import { type Code, type IntCode } from 'mn-dugaar-deeree/constants'
 
 export interface DugaarDeereeResponse<I extends IntCode> {
   intCode: I

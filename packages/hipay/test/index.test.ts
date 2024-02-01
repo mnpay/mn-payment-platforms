@@ -1,14 +1,14 @@
-import { server } from '@packages/hipay/test/mocks'
+import { server } from 'mn-hipay/test/mocks'
 import { HttpResponse, http } from 'msw'
-import { type HipayDefaultConfig } from '@packages/hipay/definitions'
+import { type HipayDefaultConfig } from 'mn-hipay/definitions'
 import { dayjs } from '@packages/core'
-import { HipayErrorTitle, createHipay } from '@packages/hipay/index'
+import { HipayErrorTitle, createHipay } from 'mn-hipay/index'
 import {
   type HipayAccessTokenResponseSuccess,
   type HipayResponseFail,
   type HipayResponse,
   type GetAccessTokenParams,
-} from '@packages/hipay/types'
+} from 'mn-hipay/types'
 
 describe('hipay api test', () => {
   const config: HipayDefaultConfig = {

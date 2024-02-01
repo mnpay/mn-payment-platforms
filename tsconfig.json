@@ -6,7 +6,9 @@
     "**/*.js",
     "**/*.mjs",
     "**/*.json",
-    "**/esbuild.config.mjs",
     ".eslintrc.cjs",
+  ],
+  "exclude": [
+    "packages"
   ]
 }

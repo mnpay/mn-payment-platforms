@@ -1,5 +1,5 @@
 import { beforeAll, afterEach, afterAll } from 'vitest'
-import { server } from '@packages/dugaar-deeree/test/mocks'
+import { server } from 'mn-dugaar-deeree/test/mocks'
 
 beforeAll(() => {
   server.listen()

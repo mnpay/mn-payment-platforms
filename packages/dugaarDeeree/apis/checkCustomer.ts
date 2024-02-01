@@ -1,6 +1,6 @@
-import { DugaarDeereeUrl } from '@packages/dugaar-deeree/constants'
-import { useApi } from '@packages/dugaar-deeree/helpers'
-import { type CheckCustomerResponse } from '@packages/dugaar-deeree/types'
+import { DugaarDeereeUrl } from 'mn-dugaar-deeree/constants'
+import { useApi } from 'mn-dugaar-deeree/helpers'
+import { type CheckCustomerResponse } from 'mn-dugaar-deeree/types'
 
 export const createCheckCustomer = useApi<{ isdn: string }, CheckCustomerResponse>((api) => {
   return async (params) => {

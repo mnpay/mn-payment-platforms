@@ -1,4 +1,4 @@
-import { HipayError, HipayRequestName, type HipayResponseFail, requestConfig } from '@packages/hipay'
+import { HipayError, HipayRequestName, type HipayResponseFail, requestConfig } from 'mn-hipay'
 
 describe('HipayError', () => {
   it('should create an instance of HipayError', () => {
