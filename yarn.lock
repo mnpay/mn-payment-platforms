@@ -771,7 +771,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@packages/core@workspace:^, @packages/core@workspace:packages/core":
+"@packages/core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@packages/core@workspace:packages/core"
   dependencies:
@@ -4626,7 +4626,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "mn-dugaar-deeree@workspace:packages/dugaarDeeree"
   dependencies:
-    "@packages/core": "workspace:^"
     axios: "npm:^1.6.7"
   languageName: unknown
   linkType: soft

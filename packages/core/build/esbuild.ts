@@ -19,5 +19,5 @@ export const build = async (options?: BuildOptions) => {
   )
 
   // eslint-disable-next-line no-console
-  console.log('Built dist/index.cjs')
+  console.log('Built dist/index.mjs')
 }

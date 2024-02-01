@@ -1,4 +1,3 @@
-import { dayjs } from '@packages/core'
 import { HipayCurrency, HipayRequestName, HipayUrl } from 'mn-hipay/constants'
 import { createHipayRequestHandler } from 'mn-hipay/helpers'
 import { getHipayUrlPath } from 'mn-hipay/lib'
@@ -69,7 +68,9 @@ export const createHipay = (config: HipayConfig) => {
   })
 
   const loadAccessToken = async (params?: GetAccessTokenParamsApi) => {
-    const isFreshToken = dayjs().add(5, 'minutes').isBefore(store.token?.expires)
+    const now = new Date()
+    const expireTime = store.token?.expires ? new Date(store.token?.expires) : undefined
+    const isFreshToken = now.valueOf() + 5 * 60 * 1000 < (expireTime?.valueOf() ?? 0)
 
     if (store.token?.access_token && isFreshToken) {
       return {

@@ -1,7 +1,6 @@
 import { server } from 'mn-hipay/test/mocks'
 import { HttpResponse, http } from 'msw'
 import { type HipayConfig } from 'mn-hipay/definitions'
-import { dayjs } from '@packages/core'
 import { HipayError, HipayErrorTitle, createHipay } from 'mn-hipay/index'
 import {
   type HipayAccessTokenResponseSuccess,
@@ -11,6 +10,7 @@ import {
   type HipayCardGetResponseSuccess,
   type HipayCardAddResponseSuccess,
 } from 'mn-hipay/types'
+import dayjs from 'dayjs'
 
 describe('hipay api test', () => {
   const config: HipayConfig = {
