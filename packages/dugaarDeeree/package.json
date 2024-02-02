@@ -1,5 +1,5 @@
 {
-  "name": "mn-dugaar-deeree",
+  "name": "@mnpay/dugaar-deeree",
   "version": "0.0.1",
   "type": "module",
   "scripts": {
@@ -27,7 +27,7 @@
     "mongolian payment platform",
     "payment",
     "mongolia",
-    "mn-dugaar-deeree"
+    "@mnpay/dugaar-deeree"
   ],
   "files": [
     "dist",

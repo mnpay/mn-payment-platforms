@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest'
-import { getHipayUrlPath } from 'mn-hipay/lib'
+import { getHipayUrlPath } from '@mnpay/hipay/lib'
 
 test('getHipayUrlPath should replace all :key with the corresponding values from the params object', () => {
   const rawPath = '/users/:id/posts/:postId/:postId'

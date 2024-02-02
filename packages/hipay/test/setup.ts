@@ -1,4 +1,4 @@
-import { server } from 'mn-hipay/test/mocks'
+import { server } from '@mnpay/hipay/test/mocks'
 
 beforeAll(() => {
   server.listen()

@@ -1,4 +1,4 @@
-import { HipayRequestName, HipayUrl, HipayErrorTitle } from 'mn-hipay/constants'
+import { HipayRequestName, HipayUrl, HipayErrorTitle } from '@mnpay/hipay/constants'
 
 export const requestConfig = {
   [HipayRequestName.accessToken]: {

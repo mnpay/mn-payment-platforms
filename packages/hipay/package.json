@@ -1,5 +1,5 @@
 {
-  "name": "mn-hipay",
+  "name": "@mnpay/hipay",
   "version": "0.0.1",
   "type": "module",
   "scripts": {
@@ -24,7 +24,7 @@
     "mongolian payment platform",
     "payment",
     "mongolia",
-    "mn-hipay"
+    "@mnpay/hipay"
   ],
   "files": [
     "dist",

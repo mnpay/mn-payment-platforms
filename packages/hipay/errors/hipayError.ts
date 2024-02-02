@@ -1,6 +1,6 @@
-import { requestConfig } from 'mn-hipay/configs'
-import { type HipayErrorTitle, type HipayRequestName } from 'mn-hipay/constants'
-import { type HipayResponseFail } from 'mn-hipay/types'
+import { requestConfig } from '@mnpay/hipay/configs'
+import { type HipayErrorTitle, type HipayRequestName } from '@mnpay/hipay/constants'
+import { type HipayResponseFail } from '@mnpay/hipay/types'
 
 export class HipayError extends Error {
   public readonly responseData?: HipayResponseFail

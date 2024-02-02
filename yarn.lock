@@ -595,6 +595,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mnpay/dugaar-deeree@workspace:^, @mnpay/dugaar-deeree@workspace:packages/dugaarDeeree":
+  version: 0.0.0-use.local
+  resolution: "@mnpay/dugaar-deeree@workspace:packages/dugaarDeeree"
+  dependencies:
+    axios: "npm:^1.6.7"
+  languageName: unknown
+  linkType: soft
+
+"@mnpay/hipay@workspace:^, @mnpay/hipay@workspace:packages/hipay":
+  version: 0.0.0-use.local
+  resolution: "@mnpay/hipay@workspace:packages/hipay"
+  dependencies:
+    axios: "npm:^1.6.7"
+  languageName: unknown
+  linkType: soft
+
 "@mswjs/cookies@npm:^1.1.0":
   version: 1.1.0
   resolution: "@mswjs/cookies@npm:1.1.0"
@@ -4622,22 +4638,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mn-dugaar-deeree@workspace:^, mn-dugaar-deeree@workspace:packages/dugaarDeeree":
-  version: 0.0.0-use.local
-  resolution: "mn-dugaar-deeree@workspace:packages/dugaarDeeree"
-  dependencies:
-    axios: "npm:^1.6.7"
-  languageName: unknown
-  linkType: soft
-
-"mn-hipay@workspace:^, mn-hipay@workspace:packages/hipay":
-  version: 0.0.0-use.local
-  resolution: "mn-hipay@workspace:packages/hipay"
-  dependencies:
-    axios: "npm:^1.6.7"
-  languageName: unknown
-  linkType: soft
-
 "mongolian-payment-platforms@workspace:.":
   version: 0.0.0-use.local
   resolution: "mongolian-payment-platforms@workspace:."
@@ -4645,6 +4645,8 @@ __metadata:
     "@commitlint/cli": "npm:^18.6.0"
     "@commitlint/config-conventional": "npm:^18.6.0"
     "@commitlint/types": "npm:^18.6.0"
+    "@mnpay/dugaar-deeree": "workspace:^"
+    "@mnpay/hipay": "workspace:^"
     "@types/eslint": "npm:^8.56.2"
     "@types/lodash": "npm:^4"
     "@types/node": "npm:^20.11.15"
@@ -4664,8 +4666,6 @@ __metadata:
     husky: "npm:^9.0.8"
     lint-staged: "npm:^15.2.1"
     lodash: "npm:^4.17.21"
-    mn-dugaar-deeree: "workspace:^"
-    mn-hipay: "workspace:^"
     msw: "npm:^2.1.5"
     nx: "npm:17.3.1"
     prettier: "npm:^3.2.4"
