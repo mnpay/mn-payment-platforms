@@ -1,6 +1,6 @@
 {
   "name": "mn-dugaar-deeree",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "lint": "yarn g:lint",
