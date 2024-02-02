@@ -34,8 +34,5 @@
     "@types",
     "README.md",
     "CHANGELOG.md"
-  ],
-  "publishConfig": {
-    "@sura0111:registry": "https://npm.pkg.github.com"
-  }
+  ]
 }
