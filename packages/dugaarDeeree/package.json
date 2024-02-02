@@ -12,5 +12,27 @@
   "types": "./@types/index.d.ts",
   "dependencies": {
     "axios": "^1.6.7"
-  }
+  },
+  "author": {
+    "name": "Sura Kh",
+    "email": "sura0111@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sura0111/mongolian-payment-platforms.git",
+    "directory": "packages/dugaarDeeree"
+  },
+  "keywords": [
+    "dugaar-deeree",
+    "mongolian payment platform",
+    "payment",
+    "mongolia",
+    "mn-dugaar-deeree"
+  ],
+  "files": [
+    "dist",
+    "@types",
+    "README.md",
+    "CHANGELOG.md"
+  ]
 }

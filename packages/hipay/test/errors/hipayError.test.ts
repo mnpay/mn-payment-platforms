@@ -1,4 +1,4 @@
-import { HipayError, HipayRequestName, type HipayResponseFail, requestConfig } from 'mn-hipay'
+import { HipayError, HipayRequestName, type HipayResponseFail, requestConfig } from 'mn-hipay/index'
 
 describe('HipayError', () => {
   it('should create an instance of HipayError', () => {

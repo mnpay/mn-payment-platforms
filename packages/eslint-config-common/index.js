@@ -26,4 +26,5 @@ module.exports = {
     '@typescript-eslint/strict-boolean-expressions': 'off',
     'no-console': ['warn', { allow: ['warn', 'error'] }],
   },
+  ignorePatterns: ['**/tsconfig.json', '**/dist', '**/@types', '!**/.lintstagedrc.mjs'],
 }
