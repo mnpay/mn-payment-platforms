@@ -39,10 +39,11 @@ jobs:
       - name: Set yarn version
         run: yarn set version self
 
-      - name: Set token npm github token
-        run: yarn config set 'npmRegistries["//npm.pkg.github.com"].npmAuthToken' ${{ secrets.NPM_GITHUB_TOKEN }}
-      - name: Set npm token
-        run: yarn config set 'npmRegistries["//registry.npmjs.org"].npmAuthToken' ${{ secrets.NPM_TOKEN }}
+      # - name: Set token npm github token
+      #   run: yarn config set 'npmRegistries["//npm.pkg.github.com"].npmAuthToken' ${{ secrets.NPM_GITHUB_TOKEN }}
+
+      # - name: Set npm token
+      #   run: yarn config set 'npmRegistries["//registry.npmjs.org"].npmAuthToken' ${{ secrets.NPM_TOKEN }}
 
       - name: Install dependencies
         run: yarn install
@@ -50,8 +51,8 @@ jobs:
       - name: Run publish
         run: yarn release
 
-      - name: Unset token npm github token
-        run: yarn config unset 'npmRegistries["//npm.pkg.github.com"].npmAuthToken'
+      # - name: Unset token npm github token
+      #   run: yarn config unset 'npmRegistries["//npm.pkg.github.com"].npmAuthToken'
 
-      - name: Unset token npm token
-        run: yarn config unset 'npmRegistries["//registry.npmjs.org"].npmAuthToken'
+      # - name: Unset token npm token
+      #   run: yarn config unset 'npmRegistries["//registry.npmjs.org"].npmAuthToken'
