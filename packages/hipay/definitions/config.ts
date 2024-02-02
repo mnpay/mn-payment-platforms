@@ -1,4 +1,4 @@
-import { type HipayRequestName } from 'mn-hipay/constants'
+import { type HipayRequestName } from '@mnpay/hipay/constants'
 import {
   type CardGetParams,
   type CardRemoveParams,
@@ -18,7 +18,7 @@ import {
   type PaymentParams,
   type GetCheckoutParams,
   type HipayGetCheckoutResponseSuccess,
-} from 'mn-hipay/types'
+} from '@mnpay/hipay/types'
 
 export interface RequestResponseConfig {
   [HipayRequestName.accessToken]: {

@@ -1,6 +1,6 @@
-import { DugaarDeereeUrl } from 'mn-dugaar-deeree/constants'
-import { useApi } from 'mn-dugaar-deeree/helpers'
-import { type PurchaseConfirmParams, type PurchaseConfirmResponse } from 'mn-dugaar-deeree/types'
+import { DugaarDeereeUrl } from '@mnpay/dugaar-deeree/constants'
+import { useApi } from '@mnpay/dugaar-deeree/helpers'
+import { type PurchaseConfirmParams, type PurchaseConfirmResponse } from '@mnpay/dugaar-deeree/types'
 
 export const createPurchaseConfirm = useApi<PurchaseConfirmParams, PurchaseConfirmResponse>((api) => {
   return async (data) => {

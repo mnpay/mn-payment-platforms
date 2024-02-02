@@ -1,7 +1,7 @@
 import axios from 'axios'
-import { DugaarDeereeUrl, apiBaseURL } from 'mn-dugaar-deeree/constants'
-import { useExpiryToken } from 'mn-dugaar-deeree/lib'
-import * as apis from 'mn-dugaar-deeree/apis'
+import { DugaarDeereeUrl, apiBaseURL } from '@mnpay/dugaar-deeree/constants'
+import { useExpiryToken } from '@mnpay/dugaar-deeree/lib'
+import * as apis from '@mnpay/dugaar-deeree/apis'
 
 /**
  * DIRECT CARRIER BILLING

@@ -1,10 +1,10 @@
-import { type HipayStore, type RequestResponseConfig } from 'mn-hipay/definitions'
-import { type HipayRequestName } from 'mn-hipay/constants'
+import { type HipayStore, type RequestResponseConfig } from '@mnpay/hipay/definitions'
+import { type HipayRequestName } from '@mnpay/hipay/constants'
 import { type AxiosInstance } from 'axios'
-import { requestConfig } from 'mn-hipay/configs'
-import { getHipayUrlPath } from 'mn-hipay/lib'
-import { type HipayResponse } from 'mn-hipay/types'
-import { HipayError } from 'mn-hipay/errors'
+import { requestConfig } from '@mnpay/hipay/configs'
+import { getHipayUrlPath } from '@mnpay/hipay/lib'
+import { type HipayResponse } from '@mnpay/hipay/types'
+import { HipayError } from '@mnpay/hipay/errors'
 
 export const createHipayRequestHandler = <
   RequestName extends HipayRequestName,

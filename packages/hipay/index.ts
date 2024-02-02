@@ -1,16 +1,16 @@
-import { HipayCurrency, HipayRequestName, HipayUrl } from 'mn-hipay/constants'
-import { createHipayRequestHandler } from 'mn-hipay/helpers'
-import { getHipayUrlPath } from 'mn-hipay/lib'
-import { type GetAccessTokenParams, type GetAccessTokenParamsApi } from 'mn-hipay/types'
+import { HipayCurrency, HipayRequestName, HipayUrl } from '@mnpay/hipay/constants'
+import { createHipayRequestHandler } from '@mnpay/hipay/helpers'
+import { getHipayUrlPath } from '@mnpay/hipay/lib'
+import { type GetAccessTokenParams, type GetAccessTokenParamsApi } from '@mnpay/hipay/types'
 import axios from 'axios'
-import { type HipayStore, type HipayConfig } from 'mn-hipay/definitions'
+import { type HipayStore, type HipayConfig } from '@mnpay/hipay/definitions'
 
-export * from 'mn-hipay/types'
-export * from 'mn-hipay/helpers'
-export * from 'mn-hipay/configs'
-export * from 'mn-hipay/constants'
-export * from 'mn-hipay/lib'
-export * from 'mn-hipay/errors'
+export * from '@mnpay/hipay/types'
+export * from '@mnpay/hipay/helpers'
+export * from '@mnpay/hipay/configs'
+export * from '@mnpay/hipay/constants'
+export * from '@mnpay/hipay/lib'
+export * from '@mnpay/hipay/errors'
 
 // reference https://developers.hipay.mn/token
 export const createHipay = (config: HipayConfig) => {

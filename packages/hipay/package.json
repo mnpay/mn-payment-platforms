@@ -1,5 +1,5 @@
 {
-  "name": "mn-hipay",
+  "name": "@mnpay/hipay",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sura0111/mongolian-payment-platforms.git",
+    "url": "git+https://github.com/mnpay/mn-payment-platforms.git",
     "directory": "packages/hipay"
   },
   "keywords": [
@@ -24,7 +24,7 @@
     "mongolian payment platform",
     "payment",
     "mongolia",
-    "mn-hipay"
+    "@mnpay/hipay"
   ],
   "files": [
     "dist",

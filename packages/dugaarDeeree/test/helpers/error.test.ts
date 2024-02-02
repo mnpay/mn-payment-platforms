@@ -8,9 +8,9 @@ import {
   type DugaarDeereeResponseError,
   Code,
   useDugaarDeeree,
-} from 'mn-dugaar-deeree/index'
+} from '@mnpay/dugaar-deeree/index'
 import { HttpResponse, http } from 'msw'
-import { server } from 'mn-dugaar-deeree/test/mocks'
+import { server } from '@mnpay/dugaar-deeree/test/mocks'
 
 test('should return correct error response', async () => {
   server.use(

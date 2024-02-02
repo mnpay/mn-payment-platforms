@@ -1,4 +1,4 @@
-import { type HipayEntityId, type HipayResponseSuccess } from 'mn-hipay/types/core'
+import { type HipayEntityId, type HipayResponseSuccess } from '@mnpay/hipay/types/core'
 
 export interface PaymentParams {
   /** Байгууллагын код. */

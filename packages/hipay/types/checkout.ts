@@ -1,4 +1,4 @@
-import { type HipayCurrency } from 'mn-hipay/constants'
+import { type HipayCurrency } from '@mnpay/hipay/constants'
 import { type CheckoutId, type HipayEntityId, type HipayResponseSuccess } from './core'
 
 export interface CheckoutResponseItem {

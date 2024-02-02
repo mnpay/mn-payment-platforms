@@ -1,5 +1,5 @@
 {
-  "name": "mn-dugaar-deeree",
+  "name": "@mnpay/dugaar-deeree",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sura0111/mongolian-payment-platforms.git",
+    "url": "git+https://github.com/mnpay/mn-payment-platforms.git",
     "directory": "packages/dugaarDeeree"
   },
   "keywords": [
@@ -27,7 +27,7 @@
     "mongolian payment platform",
     "payment",
     "mongolia",
-    "mn-dugaar-deeree"
+    "@mnpay/dugaar-deeree"
   ],
   "files": [
     "dist",
