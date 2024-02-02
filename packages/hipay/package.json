@@ -10,6 +10,28 @@
   },
   "main": "./dist/index.mjs",
   "types": "./@types/index.d.ts",
+  "author": {
+    "name": "Sura Kh",
+    "email": "sura0111@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sura0111/mongolian-payment-platforms.git",
+    "directory": "packages/hipay"
+  },
+  "keywords": [
+    "hipay",
+    "mongolian payment platform",
+    "payment",
+    "mongolia",
+    "mn-hipay"
+  ],
+  "files": [
+    "dist",
+    "@types",
+    "README.md",
+    "CHANGELOG.md"
+  ],
   "dependencies": {
     "axios": "^1.6.7"
   }

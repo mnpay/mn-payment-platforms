@@ -24,7 +24,7 @@ jobs:
         run: yarn set version self
       
       - name: Set token
-        run: yarn config set npmAuthToken ${{secrets.NPM_TOKEN}}
+        run: yarn config set npmAuthToken ${{secrets.NPM_GITHUB_TOKEN}}
 
       - name: Install dependencies
         run: yarn install

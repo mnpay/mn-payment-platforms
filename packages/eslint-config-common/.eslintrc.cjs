@@ -12,4 +12,5 @@ module.exports = {
     sourceType: 'module',
     extraFileExtensions: ['.json'],
   },
+  ignorePatterns: ['tsconfig.json', '!.lintstagedrc.mjs'],
 }
