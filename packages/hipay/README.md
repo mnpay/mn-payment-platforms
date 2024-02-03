@@ -1,14 +1,14 @@
 # Hi-Pay token service manual
 
-# Information
+## Information
 Official Document: https://developers.hipay.mn/token
 
-# Installation
+## Installation
 ```ts
 yarn add -D @mnpay/hipay
 ```
 
-# Usage
+## Usage
 ```ts
 import { createHipay } from '@mnpay/hipay'
 
@@ -23,24 +23,24 @@ const hipay = createHipay({
 const cardId = await hipay.getCard({ cardId: 'YOUR_CARD_ID' })
 ```
 
-# Types
-## HipayError
+## Types
+### HipayError
 
 | Field | Type | Description |
 |-------|------|-------------|
 | field | `string` | Field name. |
 | issue | `string` | Issue with the specific field. |
 
-## Base Response
+### Base Response
 | Field | Type | Description |
 |-------|------|-------------|
 | code  | `Code` | 1 = success, 0 = fail |
 | description | `string` | An error description if an error occurred in the request. |
 | details | `HipayError[]` | A list containing error information if an error occurred in the request. |
 
-# Functions
+## Functions
 
-## getAuthToken
+### getAuthToken
 
 This function is used to get the authentication token. This is usually the first operation performed when interacting with the organization's system. The access token received in response to this request enables subsequent operations to be performed.
 
@@ -127,7 +127,7 @@ JSON Object with the following properties:
 | description | `string` | Status of the request.                            |
 | details     | `HipayError[]`   | A list containing error information if an error occurred in the request. The Error object contains information according to the error information table. |
 
-## getCheckout
+### getCheckout
 
 This function is used to check whether a payment has been made using the invoice number.
 
@@ -162,7 +162,7 @@ JSON Object with the following properties:
 | paymentId    | `string` | The payment transaction ID when the payment is paid. |
 | details      | `Error[]` | A list containing error information if an error occurred in the request. The Error object contains information according to the error information table. |
 
-## payment
+### payment
 
 This function is used to make a payment transaction. The payment transaction request uses the previously created payment invoice (checkout).
 
@@ -208,11 +208,11 @@ JSON Object with the following properties:
 | desc_mn      | `string` | The description of the payment transaction in Mongolian. |
 | details      | `HipayError[]` | A list containing error information if an error occurred in the request. The Error object contains information according to the error information table. |
 
-## getCardAddFormUrl
+### getCardAddFormUrl
 
 This function is used to get the Hi-Pay card addition form.
 
-## resetToken
+### resetToken
 
 This function is used to reset the token.
 
