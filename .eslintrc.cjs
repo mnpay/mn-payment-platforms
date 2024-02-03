@@ -5,5 +5,5 @@ module.exports = {
   parserOptions: {
     project: 'tsconfig.json',
   },
-  ignorePatterns: ['tsconfig.json', 'packages'],
+  ignorePatterns: ['packages'],
 }

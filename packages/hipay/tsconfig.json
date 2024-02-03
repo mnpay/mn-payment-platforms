@@ -6,16 +6,16 @@
     "declarationDir": "./@types",
   },
   "include": [
-    "**/*.ts",
-    "**/*.cjs",
-    "**/*.js",
-    "**/*.mjs",
-    "**/*.json",
-    ".eslintrc.cjs",
-    ".lintstagedrc.mjs"
+    "./**/*.ts",
+    "./**/*.cjs",
+    "./**/*.js",
+    "./**/*.mjs",
+    "./**/*.json",
+    "./.eslintrc.cjs",
+    "./.lintstagedrc.mjs"
   ],
   "exclude": [
-    "dist",
-    "@types"
+    "./dist",
+    "./@types"
   ]
 }

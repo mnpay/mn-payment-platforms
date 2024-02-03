@@ -1,12 +1,16 @@
 {
   "extends": "@packages/tsconfig",
+  "compilerOptions": {
+    "noEmit": true,
+    "emitDeclarationOnly": false
+  },
   "include": [
-    "**/*.ts",
-    "**/*.cjs",
-    "**/*.js",
-    "**/*.mjs",
-    "**/*.json",
-    ".eslintrc.cjs",
+    "./**/*.ts",
+    "./**/*.cjs",
+    "./**/*.js",
+    "./**/*.mjs",
+    "./**/*.json",
+    "./.eslintrc.cjs",
   ],
   "exclude": [
     "packages"
