@@ -24,19 +24,19 @@ const cardId = await hipay.getCard({ cardId: 'YOUR_CARD_ID' })
 ```
 
 # Types
-## Error
+## HipayError
 
 | Field | Type | Description |
 |-------|------|-------------|
-| field | ``string`` | Field name. |
-| issue | ``string`` | Issue with the specific field. |
+| field | `string` | Field name. |
+| issue | `string` | Issue with the specific field. |
 
 ## Base Response
 | Field | Type | Description |
 |-------|------|-------------|
 | code  | `Code` | 1 = success, 0 = fail |
-| description | ``string`` | error description if fails |
-| details | `List<Error>` | error details if fails |
+| description | `string` | An error description if an error occurred in the request. |
+| details | `HipayError[]` | A list containing error information if an error occurred in the request. |
 
 # Functions
 
@@ -76,7 +76,7 @@ JSON Object with the following properties:
 | description   | `string` | A description indicating whether the request was successful. |
 | access_token  | `string` | The access token.                                |
 | expires       | `number` | The expiration time of the token, expressed in seconds. |
-| details       | `Error[]` | A list containing error information if an error occurred in the request. The Error object contains information according to the error information table. |
+| details       | `HipayError[]` | A list containing error information if an error occurred in the request. The Error object contains information according to the error information table. |
 
 ## checkout
 
@@ -125,15 +125,42 @@ JSON Object with the following properties:
 | checkoutId  | `string` | Checkout ID (Generated if successful).            |
 | code        | `Code` | Status of the request.                            |
 | description | `string` | Status of the request.                            |
-| details     | `Error[]`   | Information about errors in specific fields if the request fails. |
+| details     | `HipayError[]`   | A list containing error information if an error occurred in the request. The Error object contains information according to the error information table. |
 
 ## getCheckout
 
 This function is used to check whether a payment has been made using the invoice number.
 
-## payment
+**Header:**
+| Field           | Value                           |
+|-----------------|---------------------------------|
+| URL             | `https://test.hipay.mn/checkout/get/{checkoutId}` |
+| Method          | `GET`                           |
+| Authorization   | `Bearer {merchant token}`       |
+| Content-Type    | `application/json`              |
 
-This function is used to make a payment transaction. The payment transaction request uses the previously created payment invoice (checkout).
+**Request:**
+
+JSON Object with the following properties:
+
+| Field        | Type     | Description                                      |
+|--------------|----------|--------------------------------------------------|
+| checkoutId   | `string` | The checkout ID of the previously created payment invoice. |
+
+**Response:**
+
+JSON Object with the following properties:
+
+| Field        | Type     | Description                                      |
+|--------------|----------|--------------------------------------------------|
+| code         | `integer`| Indicates whether the request was successful. 1 for success, 0 for failure. |
+| description  | `string` | A description indicating whether the request was successful. |
+| amount       | `double` | The payment amount.                              |
+| currency     | `string` | The payment currency.                            |
+| status       | `string` | The status of the payment (new, canceled, paid, expired, invalid). |
+| status_date  | `datetime`| The date when the status was changed.             |
+| paymentId    | `string` | The payment transaction ID when the payment is paid. |
+| details      | `Error[]` | A list containing error information if an error occurred in the request. The Error object contains information according to the error information table. |
 
 ## payment
 
@@ -166,7 +193,7 @@ JSON Object with the following properties:
 
 | Field        | Type     | Description                                      |
 |--------------|----------|--------------------------------------------------|
-| code         | `number` | Indicates whether the request was successful. 1 for success, 0 for failure. |
+| code         | `Code` | Indicates whether the request was successful. 1 for success, 0 for failure. |
 | description  | `string` | A description indicating whether the request was successful. |
 | requestId    | `string` | The request ID of the payment request.           |
 | checkoutId   | `string` | The checkout ID of the completed payment invoice. |
@@ -179,7 +206,7 @@ JSON Object with the following properties:
 | paymentDate  | `string` | The date of the payment transaction.              |
 | desc_en      | `string` | The description of the payment transaction in English. |
 | desc_mn      | `string` | The description of the payment transaction in Mongolian. |
-| details      | `Error[]` | A list containing error information if an error occurred in the request. The Error object contains information according to the error information table. |
+| details      | `HipayError[]` | A list containing error information if an error occurred in the request. The Error object contains information according to the error information table. |
 
 ## getCardAddFormUrl
 
