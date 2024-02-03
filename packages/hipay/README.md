@@ -14,7 +14,7 @@ import { createHipay } from '@mnpay/hipay'
 
 const hipay = createHipay({
   baseUrl: 'https://test.hipay.mn',
-  version: 'v2'
+  version: 'v2',
   client_id: 'YOUR_CLIENT_ID',
   client_secret: 'YOUR_CLIENT_SECRET',
   code: 'YOUR_CODE',
