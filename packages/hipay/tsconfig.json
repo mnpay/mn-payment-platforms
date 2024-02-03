@@ -4,6 +4,12 @@
     "declaration": true,
     "emitDeclarationOnly": true,
     "declarationDir": "./@types",
+    "outDir": "./dist",
+    "paths": {
+      "@mnpay/hipay/*": [
+        "./*"
+      ]
+    }
   },
   "include": [
     "./**/*.ts",
