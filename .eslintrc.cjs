@@ -5,5 +5,5 @@ module.exports = {
   parserOptions: {
     project: 'tsconfig.json',
   },
-  ignorePatterns: ['packages'],
+  ignorePatterns: ['packages', '!.lintstagedrc.mjs'],
 }

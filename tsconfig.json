@@ -1,6 +1,7 @@
 {
   "extends": "@packages/tsconfig",
   "compilerOptions": {
+    "rootDir": ".",
     "noEmit": true,
     "emitDeclarationOnly": false
   },
@@ -11,6 +12,7 @@
     "./**/*.mjs",
     "./**/*.json",
     "./.eslintrc.cjs",
+    "./.lintstagedrc.mjs",
   ],
   "exclude": [
     "packages"
