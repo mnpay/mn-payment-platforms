@@ -1,3 +1,3 @@
 export default {
-  "*.{js,cjs,mjs,ts}": "eslint"
+  '*.{js,cjs,mjs,ts}': 'eslint',
 }
