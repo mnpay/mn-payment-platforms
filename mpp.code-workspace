@@ -35,6 +35,7 @@
       "**/.DS_Store": true,
       "**/Thumbs.db": true,
       "**/.ruby-lsp": true,
+      "**/.vscode": true,
       "coverage": true,
       ".nx": true,
       ".yarn": true,
