@@ -11,10 +11,6 @@
     "./**/*.js",
     "./**/*.mjs",
     "./**/*.json",
-    "./.eslintrc.cjs",
     "./.lintstagedrc.mjs",
-  ],
-  "exclude": [
-    "packages"
   ]
 }

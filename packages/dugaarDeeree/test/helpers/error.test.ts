@@ -62,7 +62,7 @@ test('should return default error response for unknown error', async () => {
       return new HttpResponse(
         JSON.stringify({
           intCode: IntCode.badRequest,
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment, @typescript-eslint/prefer-ts-expect-error
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
           code: 'unexpected system error',
           info: codeToErrorMessage[Code.badRequest],

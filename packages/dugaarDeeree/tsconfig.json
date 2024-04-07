@@ -17,8 +17,7 @@
     "./**/*.cjs",
     "./**/*.js",
     "./**/*.mjs",
-    "./**/*.json",
-    "./.eslintrc.cjs",
+    "./**/*.json"
   ],
   "exclude": [
     "./dist",

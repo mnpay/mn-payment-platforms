@@ -5,10 +5,11 @@
     "emitDeclarationOnly": true,
     "declarationDir": "./@types",
     "outDir": "./dist",
+    "types": ["vite/client", "vitest/globals"],
     "paths": {
-      "@mnpay/hipay/*": [
+      "@/*": [
         "./*"
-      ]
+      ],
     }
   },
   "include": [

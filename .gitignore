@@ -5,3 +5,6 @@ node_modules
 **/@types
 coverage
 **/.vscode
+
+.env.local
+.env.*.local
