@@ -12,7 +12,7 @@
     "g:vitest": "cd $INIT_CWD && vitest",
     "g:tsc": "cd $INIT_CWD && tsc && tsc-alias",
     "g:clear-build": "cd $INIT_CWD && yarn g:rimraf dist && yarn g:rimraf @types",
-    "g:build": "cd $INIT_CWD && yarn clear-build && yarn g:vite-node esbuild.config.ts && yarn g:tsc",
+    "g:build": "cd $INIT_CWD && yarn g:clear-build && yarn g:vite-node esbuild.config.ts && yarn g:tsc",
     "g:lint": "cd $INIT_CWD && yarn g:eslint ./",
     "g:test": "cd $INIT_CWD && yarn g:vitest run",
     "g:publish": "cd $INIT_CWD && yarn npm publish",

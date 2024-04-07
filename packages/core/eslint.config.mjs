@@ -10,7 +10,7 @@ import typescriptEslintParser from '@typescript-eslint/parser'
 /** @type {import('eslint').Linter.FlatConfig[]} */
 export default [
   {
-    ignores: ['**/dist', '**/@types', '**/.lintstagedrc.mjs', '**/node_modules'],
+    ignores: ['**/dist', '**/@types', '**/.lintstagedrc.mjs', '**/node_modules', '!.lintstagedrc.mjs'],
   },
   js.configs.recommended,
   ...tseslint.configs.recommended,

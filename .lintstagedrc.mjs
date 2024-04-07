@@ -1,3 +1,5 @@
+import baseConfig from '@packages/core/.lintstagedrc.mjs'
+
 export default {
-  '*.{js,cjs,mjs,ts}': 'eslint',
+  ...baseConfig,
 }
