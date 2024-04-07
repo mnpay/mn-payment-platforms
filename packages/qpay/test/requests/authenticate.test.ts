@@ -1,5 +1,5 @@
-import { env, mockApi, qpay } from '@/test/mocks/api'
-import { AuthenticateResponse } from '@/types'
+import { env, mockApi, qpay } from '@mnpay/qpay/test/mocks/api'
+import { AuthenticateResponse } from '@mnpay/qpay/types'
 
 describe('Authenticate', () => {
   it('should authenticate a user', async () => {

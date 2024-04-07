@@ -20,9 +20,8 @@ export const useQpay = (config: QpayConfig) => {
   })
 
   const store: Store = {
+    ...config,
     baseUrl,
-    accessToken: config.accessToken,
-    expiresIn: config.expiresIn,
   }
 
   const storeConfig: StoreConfig = {

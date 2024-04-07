@@ -9,6 +9,9 @@
     },
     "packages/hipay": {
       "release-type": "node"
+    },
+    "packages/qpay": {
+      "release-type": "node"
     }
   }
 }

@@ -1,6 +1,6 @@
-import { QpayRequestPath } from '@/constants'
-import { useQpayApi } from '@/lib'
-import { RefreshRequestParams, RefreshResponse } from '@/types'
+import { QpayRequestPath } from '@mnpay/qpay/constants'
+import { useQpayApi } from '@mnpay/qpay/lib'
+import { RefreshRequestParams, RefreshResponse } from '@mnpay/qpay/types'
 import { z } from 'zod'
 
 /**

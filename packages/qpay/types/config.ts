@@ -1,4 +1,4 @@
-import { type QpayApiVersion } from '@/constants'
+import { type QpayApiVersion } from '@mnpay/qpay/constants'
 
 export interface QpayConfig {
   baseUrl?: string

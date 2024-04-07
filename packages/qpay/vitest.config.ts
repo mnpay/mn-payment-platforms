@@ -1,11 +1,3 @@
-import { defineProject, mergeConfig } from 'vitest/config'
-import viteConfig from './vite.config'
+import { createVitestConfig } from '@packages/core/createVitestConfig.mjs'
 
-export default defineProject(
-  mergeConfig(viteConfig, {
-    test: {
-      globals: true,
-      setupFilesAfterEnv: ['./test/setup.ts'],
-    },
-  }),
-)
+export default createVitestConfig()

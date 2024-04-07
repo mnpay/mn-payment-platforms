@@ -4,7 +4,7 @@ export default createViteConfig({
   build: {
     lib: {
       entry: 'index.ts',
-      name: 'qpay',
+      name: 'hipay',
       fileName: 'index',
     },
   },
