@@ -1,9 +1,10 @@
 {
   "extends": "@packages/tsconfig",
   "compilerOptions": {
+    "baseUrl": ".",
     "declarationDir": "./@types",
     "paths": {
-      "@mnpay/dugaarDeeree/*": [
+      "@mnpay/dugaar-deeree/*": [
         "./*"
       ]
     }

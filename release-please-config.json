@@ -4,7 +4,7 @@
       "release-type": "node",
       "exclude-paths": ["packages"]
     },
-    "packages/dugaarDeeree": {
+    "packages/dugaar-deeree": {
       "release-type": "node"
     },
     "packages/hipay": {

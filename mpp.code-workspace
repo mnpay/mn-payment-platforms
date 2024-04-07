@@ -5,8 +5,8 @@
       "path": "./"
     },
     {
-      "name": "dugaarDeeree",
-      "path": "./packages/dugaarDeeree/"
+      "name": "dugaar-deeree",
+      "path": "./packages/dugaar-deeree/"
     },
     {
       "name": "hipay",

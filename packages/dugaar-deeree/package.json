@@ -33,7 +33,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mnpay/mn-payment-platforms.git",
-    "directory": "packages/dugaarDeeree"
+    "directory": "packages/dugaar-deeree"
   },
   "keywords": [
     "dugaar-deeree",
