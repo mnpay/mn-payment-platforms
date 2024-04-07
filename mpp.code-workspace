@@ -26,7 +26,7 @@
     }
   ],
   "settings": {
-    "javascript.preferences.importModuleSpecifier": "shortest",
+    "javascript.preferences.importModuleSpecifier": "non-relative",
     "files.exclude": {
       "**/.git": true,
       "**/.svn": true,

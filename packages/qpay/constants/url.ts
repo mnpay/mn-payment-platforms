@@ -8,6 +8,11 @@ export enum QpayApiVersion {
 export enum QpayRequestPath {
   authenticate = '/auth/token',
   refresh = '/auth/refresh',
+  invoice = '/invoice',
+  payment = '/payment',
+  paymentCheck = '/payment/check',
+  paymentCancel = '/payment/refund',
+  paymentList = '/payment/list',
   create = '/bill/create',
   createWithTransaction = '/bill/create_with_transaction',
   check = '/bill/check',

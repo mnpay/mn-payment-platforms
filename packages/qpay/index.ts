@@ -1,7 +1,17 @@
 import axios from 'axios'
 import { type QpayConfig } from './types'
 import { QpayApiVersion, qpayDefaultBaseUrl } from './constants'
-import { createAuthenticate } from './requests'
+import {
+  makeCancelInvoice,
+  makeCancelPayment,
+  makeCheckPayment,
+  makeCreateAuthenticate,
+  makeCreateInvoice,
+  makeGetInvoice,
+  makeGetPayment,
+  makeGetPaymentList,
+  makeRefreshToken,
+} from './requests'
 import { type Store, type StoreConfig } from './definitions'
 
 /**
@@ -31,15 +41,63 @@ export const useQpay = (config: QpayConfig) => {
     },
   }
 
-  const authenticate = createAuthenticate(api, storeConfig)
+  const authenticate = makeCreateAuthenticate(api, storeConfig)
+  const refreshToken = makeRefreshToken(api, storeConfig)
+  const createInvoice = makeCreateInvoice(api, storeConfig)
+  const getInvoice = makeGetInvoice(api, storeConfig)
+  const cancelInvoice = makeCancelInvoice(api, storeConfig)
+  const getPayment = makeGetPayment(api, storeConfig)
+  const checkPayment = makeCheckPayment(api, storeConfig)
+  const cancelPayment = makeCancelPayment(api, storeConfig)
+  const getPaymentList = makeGetPaymentList(api, storeConfig)
 
   return {
     api,
     /**
-     * ### Токен авах хүсэлт
+     * #### Токен авах хүсэлт
      * Access token авах API.
      * `{ username: client_id, password: client_secret }`-ийг qPay -ээс авна.
      */
     authenticate,
+    /**
+     * #### Access token шинэчлэн авах API.
+     * refresh_token -ийг ашиглана.
+     */
+    refreshToken,
+    /**
+     * #### Төлбөрийн нэхэмжлэл үүсгэх.
+     * `invoice_code` -ийг qPay -ээс олгоно.
+     */
+    createInvoice,
+    /**
+     * #### Үүсгэсэн нэхэмжлэлийн мэдээллийг харах
+     * Query Parameter -д qPay invoice_id -ийг илгээнэ.
+     */
+    getInvoice,
+    /**
+     * #### Төлбөрийн нэхэмжлэл цуцлах
+     * Query Parameter -д qPay invoice_id -ийг илгээнэ.
+     */
+    cancelInvoice,
+    /**
+     * #### Үүсгэсэн нэхэмжлэлийн мэдээллийг харах
+     * Query Parameter -д qPay payment_id -ийг илгээнэ.
+     */
+    getPayment,
+    /**
+     * #### Төлбөр төлөгдсөн эсэхийг шалгах
+     * Нэхэмжлэлийн төлбөр шалгах бол object_type=INVOICE
+     */
+    checkPayment,
+    /**
+     * #### Төлбөрийг цуцлах
+     * Query Parameter -д qPay payment_id -ийг илгээнэ.
+     */
+    cancelPayment,
+    /**
+     * #### Төлбөр төлөлтийн жагсаалт авах
+     * customer_id, card_terminal_id, p2p_terminal_id -ийн мэдээллийг qPay merchant web admin-аас эсвэл qPay -ээс авна.
+     */
+    getPaymentList,
   }
 }

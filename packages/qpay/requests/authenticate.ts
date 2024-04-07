@@ -2,7 +2,7 @@ import { type AuthenticateResponse, type AuthenticateParams } from '@mnpay/qpay/
 import { QpayRequestPath } from '@mnpay/qpay/constants'
 import { useQpayApi } from '@mnpay/qpay/lib'
 
-export const createAuthenticate = useQpayApi<AuthenticateResponse, AuthenticateParams>(
+export const makeCreateAuthenticate = useQpayApi<AuthenticateResponse, AuthenticateParams>(
   (api, { setStore }) =>
     async (data) => {
       const token = Buffer.from(`${data.username}:${data.password}`).toString('base64')
