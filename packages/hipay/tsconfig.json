@@ -1,10 +1,7 @@
 {
   "extends": "@packages/tsconfig",
   "compilerOptions": {
-    "declaration": true,
-    "emitDeclarationOnly": true,
     "declarationDir": "./@types",
-    "outDir": "./dist",
     "paths": {
       "@mnpay/hipay/*": [
         "./*"
@@ -16,8 +13,7 @@
     "./**/*.cjs",
     "./**/*.js",
     "./**/*.mjs",
-    "./**/*.json",
-    "./.eslintrc.cjs"
+    "./**/*.json"
   ],
   "exclude": [
     "./dist",

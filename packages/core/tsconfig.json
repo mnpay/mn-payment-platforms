@@ -6,7 +6,6 @@
     "**/*.js",
     "**/*.mjs",
     "**/*.cjs",
-    ".eslintrc.cjs",
     ".lintstagedrc.mjs"
   ],
 }

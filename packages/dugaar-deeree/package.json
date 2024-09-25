@@ -1,0 +1,54 @@
+{
+  "name": "@mnpay/dugaar-deeree",
+  "version": "1.1.3",
+  "type": "module",
+  "scripts": {
+    "lint": "yarn g:lint",
+    "test": "yarn g:test",
+    "build": "yarn g:build",
+    "release": "yarn g:publish"
+  },
+  "main": "./dist/index.umd.cjs",
+  "module": "./dist/index.js",
+  "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "default": "./dist/index.js",
+        "types": "./types/index.d.ts"
+      },
+      "require": {
+        "default": "./dist/index.umd.cjs",
+        "types": "./types/index.d.ts"
+      }
+    }
+  },
+  "dependencies": {
+    "axios": "^1.6.8"
+  },
+  "author": {
+    "name": "Sura Kh",
+    "email": "sura0111@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mnpay/mn-payment-platforms.git",
+    "directory": "packages/dugaar-deeree"
+  },
+  "keywords": [
+    "dugaar-deeree",
+    "mongolian payment platform",
+    "payment",
+    "mongolia",
+    "@mnpay/dugaar-deeree"
+  ],
+  "files": [
+    "dist",
+    "@types",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "devDependencies": {
+    "@packages/core": "workspace:^"
+  }
+}

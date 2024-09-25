@@ -5,12 +5,16 @@
       "path": "./"
     },
     {
-      "name": "dugaarDeeree",
-      "path": "./packages/dugaarDeeree/"
+      "name": "dugaar-deeree",
+      "path": "./packages/dugaar-deeree/"
     },
     {
       "name": "hipay",
       "path": "./packages/hipay/"
+    },
+    {
+      "name": "qpay",
+      "path": "./packages/qpay/"
     },
     {
       "name": "core",
@@ -19,14 +23,10 @@
     {
       "name": "tsconfig",
       "path": "./packages/tsconfig/"
-    },
-    {
-      "name": "eslint-config-common",
-      "path": "./packages/eslint-config-common/"
-    },
+    }
   ],
   "settings": {
-    "javascript.preferences.importModuleSpecifier": "shortest",
+    "javascript.preferences.importModuleSpecifier": "non-relative",
     "files.exclude": {
       "**/.git": true,
       "**/.svn": true,
@@ -42,14 +42,24 @@
       ".husky": true,
       "**/dist": true,
       "**/@types": true,
-      "**/node_modules": true
+      "**/node_modules": true,
+      "**/.*": true,
+      "CHANGELOG.md": true,
+      "commitlint.config.ts": true
     },
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+      "vue",
+      "html"
+    ],
     "eslint.workingDirectories": [
-      "./",
-      "./packages/dugaarDeeree",
-      "./packages/hipay",
-      "./packages/core",
-      "./packages/eslint-config-common"
-    ]
+      { "pattern": "./packages/*" }
+    ],
+    "editor.formatOnSave": true,
+    "eslint.useFlatConfig": true,
+    "typescript.tsdk": "root/node_modules/typescript/lib"
   }
 }

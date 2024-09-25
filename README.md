@@ -2,4 +2,4 @@
 
 ## Included Packages
 * [hipay](./packages/hipay)
-* [dugaarDeeree](./packages/dugaarDeeree)
+* [dugaar-deeree](./packages/dugaar-deeree)
