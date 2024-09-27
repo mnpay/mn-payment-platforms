@@ -43,8 +43,6 @@
       "**/dist": true,
       "**/@types": true,
       "**/node_modules": true,
-      "**/.*": true,
-      "CHANGELOG.md": true,
       "commitlint.config.ts": true
     },
     "eslint.validate": [
