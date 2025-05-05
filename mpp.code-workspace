@@ -1,8 +1,8 @@
 {
   "folders": [
     {
-      "name": "root",
-      "path": "./"
+      "name": "golomt",
+      "path": "./packages/golomt/"
     },
     {
       "name": "dugaar-deeree",
@@ -23,7 +23,11 @@
     {
       "name": "tsconfig",
       "path": "./packages/tsconfig/"
-    }
+    },
+    {
+      "name": "root",
+      "path": "./"
+    },
   ],
   "settings": {
     "javascript.preferences.importModuleSpecifier": "non-relative",

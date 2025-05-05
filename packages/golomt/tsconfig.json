@@ -1,0 +1,23 @@
+{
+  "extends": "@packages/tsconfig",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "declarationDir": "./@types",
+    "paths": {
+      "@mnpay/golomt/*": [
+        "./*"
+      ],
+    }
+  },
+  "include": [
+    "./**/*.ts",
+    "./**/*.cjs",
+    "./**/*.js",
+    "./**/*.mjs",
+    "./**/*.json"
+  ],
+  "exclude": [
+    "./dist",
+    "./@types"
+  ]
+}

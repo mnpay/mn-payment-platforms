@@ -36,6 +36,7 @@
     "@eslint/eslintrc": "^3.0.2",
     "@eslint/js": "^9.0.0",
     "@mnpay/dugaar-deeree": "workspace:^",
+    "@mnpay/golomt": "workspace:^",
     "@mnpay/hipay": "workspace:^",
     "@mnpay/qpay": "workspace:^",
     "@packages/core": "workspace:^",

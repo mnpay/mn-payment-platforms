@@ -12,6 +12,9 @@
     },
     "packages/qpay": {
       "release-type": "node"
+    },
+    "packages/golomt": {
+      "release-type": "node"
     }
   }
 }

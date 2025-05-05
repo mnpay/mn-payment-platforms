@@ -8,3 +8,6 @@ coverage
 
 .env.local
 .env.*.local
+
+.cursor
+**/.DS_STORE
