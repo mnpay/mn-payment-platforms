@@ -1,13 +1,21 @@
 // Extend the mock API to include all necessary properties
 
+import { GolomtRequestPath } from '../constants'
 import { InvoiceParams } from '../types'
-import { golomt } from './mocks/api'
+import { golomt, isSandBox, mockApi } from './mocks/api'
 import { describe, it, expect } from 'vitest'
 
 // Test suite for makeCreateInvoiceRequest
 describe('makeCreateInvoiceRequest', () => {
   it('should make a POST request to the invoice endpoint', async () => {
     const { createInvoice } = golomt
+
+    if (!isSandBox) {
+      mockApi?.onPost(GolomtRequestPath.invoice).reply(200, {
+        transactionId: 'test123',
+        invoice: 'invoice123',
+      })
+    }
 
     const params: InvoiceParams = {
       amount: 1000,

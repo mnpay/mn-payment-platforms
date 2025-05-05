@@ -8,7 +8,7 @@ export const golomt = useGolomt({
   token: import.meta.env.VITE_GOLOMT_TOKEN,
 })
 
-const isSandBox = import.meta.env.VITE_SANDBOX === 'true'
+export const isSandBox = import.meta.env.VITE_SANDBOX === 'true'
 
 export const env = isSandBox
   ? z
