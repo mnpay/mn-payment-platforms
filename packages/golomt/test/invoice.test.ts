@@ -2,7 +2,7 @@
 
 import { GolomtRequestPath } from '../constants'
 import { InvoiceParams } from '../types'
-import { golomt, isSandBox, mockApi } from './mocks/api'
+import { golomt, isSandBox, mockApi } from './_mocks/api'
 import { describe, it, expect } from 'vitest'
 
 // Test suite for makeCreateInvoiceRequest

@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { generateChecksum } from '@mnpay/golomt/helpers/generateChecksum'
 import { InvoiceParams } from '@mnpay/golomt/types'
-import { env } from '../mocks/api'
+import { env } from '../_mocks/api'
 
 describe('generateChecksum', () => {
   it('should generate the correct checksum', () => {
