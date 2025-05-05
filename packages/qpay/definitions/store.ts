@@ -1,6 +1,6 @@
 import { type QpayConfig } from '@mnpay/qpay/types'
 
-export interface Store extends QpayConfig {}
+export type Store = QpayConfig
 
 export interface StoreConfig {
   store: Readonly<Store>

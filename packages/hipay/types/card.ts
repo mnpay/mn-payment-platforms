@@ -22,8 +22,8 @@ export interface CardRemoveParams {
   cardId: string
 }
 
-export interface HipayCardInitResponseSuccess extends HipayResponseSuccess {}
-export interface HipayCardRemoveResponseSuccess extends HipayResponseSuccess {}
+export type HipayCardInitResponseSuccess = HipayResponseSuccess
+export type HipayCardRemoveResponseSuccess = HipayResponseSuccess
 
 export interface HipayCardGetResponseSuccess extends HipayResponseSuccess {
   /** Картын токен */

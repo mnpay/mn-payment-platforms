@@ -57,6 +57,6 @@ export interface InquirySuccessResponse extends InquiryBaseResponse {
   errorCode: '000'
 }
 
-export interface InquiryErrorResponse extends InquiryBaseResponse {}
+export type InquiryErrorResponse = InquiryBaseResponse
 
 export type InquiryResponse = InquirySuccessResponse | InquiryErrorResponse
