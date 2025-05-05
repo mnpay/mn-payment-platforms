@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.2](https://github.com/mnpay/mn-payment-platforms/compare/hipay-v1.3.1...hipay-v1.3.2) (2025-05-05)
+
+
+### Bug Fixes
+
+* bug ([bc34460](https://github.com/mnpay/mn-payment-platforms/commit/bc34460e73f5849839796a8ff29b0bf199edf31e))
+
 ## [1.3.1](https://github.com/mnpay/mn-payment-platforms/compare/hipay-v1.3.0...hipay-v1.3.1) (2025-05-05)
 
 

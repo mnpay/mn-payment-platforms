@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/mnpay/mn-payment-platforms/compare/dugaar-deeree-v1.0.2...dugaar-deeree-v1.0.3) (2025-05-05)
+
+
+### Bug Fixes
+
+* bug ([bc34460](https://github.com/mnpay/mn-payment-platforms/commit/bc34460e73f5849839796a8ff29b0bf199edf31e))
+
 ## [1.0.2](https://github.com/mnpay/mn-payment-platforms/compare/dugaar-deeree-v1.0.1...dugaar-deeree-v1.0.2) (2025-05-05)
 
 
