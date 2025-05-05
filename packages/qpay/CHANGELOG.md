@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.6](https://github.com/mnpay/mn-payment-platforms/compare/qpay-v0.1.5...qpay-v0.1.6) (2025-05-05)
+
+
+### Bug Fixes
+
+* bug ([bc34460](https://github.com/mnpay/mn-payment-platforms/commit/bc34460e73f5849839796a8ff29b0bf199edf31e))
+
 ## [0.1.5](https://github.com/mnpay/mn-payment-platforms/compare/qpay-v0.1.4...qpay-v0.1.5) (2025-05-05)
 
 
