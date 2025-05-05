@@ -14,12 +14,12 @@
   "exports": {
     ".": {
       "import": {
-        "default": "./dist/index.js",
-        "types": "./@types/index.d.ts"
+        "types": "./@types/index.d.ts",
+        "default": "./dist/index.js"
       },
       "require": {
-        "default": "./dist/index.umd.cjs",
-        "types": "./@types/index.d.ts"
+        "types": "./@types/index.d.ts",
+        "default": "./dist/index.umd.cjs"
       }
     }
   },
