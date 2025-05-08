@@ -1,5 +1,5 @@
 export interface GolomtConfig {
-  endpoint: string
+  endpoint?: string
   secret: string
   token: string
 }

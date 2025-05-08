@@ -1,10 +1,11 @@
+import { golomtDefaultBaseUrl } from '../constants/url'
 export const generateInvoiceUrl = ({
-  baseUrl,
+  baseUrl = golomtDefaultBaseUrl,
   paymentMethod,
   language,
   invoiceNumber,
 }: {
-  baseUrl: string
+  baseUrl?: string
   paymentMethod: 'payment' | 'socialpay'
   language: 'mn' | 'en'
   invoiceNumber: string
