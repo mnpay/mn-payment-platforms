@@ -13,6 +13,7 @@ import { golomtDefaultBaseUrl } from './constants'
 import { onNotification } from './events'
 
 export * from './types'
+export * from './helpers'
 export * from './constants'
 
 export const useGolomt = (config: GolomtConfig) => {
