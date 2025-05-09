@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.5](https://github.com/mnpay/mn-payment-platforms/compare/golomt-v1.0.4...golomt-v1.0.5) (2025-05-09)
+
+
+### Bug Fixes
+
+* bug ([37b359f](https://github.com/mnpay/mn-payment-platforms/commit/37b359f097f2f9b2058c80caf9f143b10d029a23))
+
 ## [1.0.4](https://github.com/mnpay/mn-payment-platforms/compare/golomt-v1.0.3...golomt-v1.0.4) (2025-05-08)
 
 
