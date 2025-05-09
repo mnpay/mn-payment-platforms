@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { generateChecksum } from '@mnpay/golomt/helpers/generateChecksum'
+import { generateInvoiceChecksum } from '@mnpay/golomt/helpers/generateChecksum'
 import { InvoiceParams } from '@mnpay/golomt/types'
 import { env } from '../_mocks/api'
 
@@ -18,7 +18,7 @@ describe('generateChecksum', () => {
     }
 
     const secret = env?.VITE_GOLOMT_SECRET ?? 'testSecret'
-    const result = await generateChecksum(params, secret)
+    const result = await generateInvoiceChecksum(params, secret)
 
     expect(result).toBe(checksum)
   })

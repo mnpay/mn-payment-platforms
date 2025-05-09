@@ -1,6 +1,6 @@
 export interface CheckTransactionRequest {
-  checksum: string
   transactionId: string
+  checksum?: string
 }
 
 export interface CheckTransactionResponse {

@@ -6,7 +6,7 @@ export interface InquiryParams {
   /**
    * checksum = transactionId + transactionId
    */
-  checksum: string
+  checksum?: string
 }
 
 export interface InquiryBaseResponse {

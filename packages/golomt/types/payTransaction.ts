@@ -1,6 +1,6 @@
 export interface PayTransactionRequest {
   amount: string
-  checksum: string
+  checksum?: string
   transactionId: string
   lang: string
   token: string

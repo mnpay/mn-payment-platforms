@@ -35,10 +35,10 @@ export const useGolomt = (config: GolomtConfig) => {
   })
 
   const createInvoice = makeCreateInvoiceRequest(api, store)
-  const inquiry = makeInquiryRequest(api)
+  const inquiry = makeInquiryRequest(api, store)
   const tokenConfirmation = makeTokenConfirmationRequest(api)
-  const payTransaction = makePayTransactionRequest(api)
-  const checkTransaction = makeCheckTransactionRequest(api)
+  const payTransaction = makePayTransactionRequest(api, store)
+  const checkTransaction = makeCheckTransactionRequest(api, store)
   const tokenCreation = makeTokenCreationRequest(api)
   const getSettlementDetails = makeGetSettlementDetailsRequest(api)
 
