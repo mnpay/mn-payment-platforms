@@ -15,6 +15,7 @@ import { onNotification } from './events'
 export * from './types'
 export * from './helpers'
 export * from './constants'
+export * from './schemas'
 
 export const useGolomt = (config: GolomtConfig) => {
   const baseURL = `${config.endpoint ?? golomtDefaultBaseUrl}`
