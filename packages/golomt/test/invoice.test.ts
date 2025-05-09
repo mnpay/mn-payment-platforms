@@ -10,12 +10,14 @@ describe('makeCreateInvoiceRequest', () => {
   it('should make a POST request to the invoice endpoint', async () => {
     const { createInvoice } = golomt
 
-    if (!isSandBox) {
-      mockApi?.onPost(GolomtRequestPath.invoice).reply(200, {
-        transactionId: 'test123',
-        invoice: 'invoice123',
-      })
+    if (isSandBox) {
+      return
     }
+
+    mockApi?.onPost(GolomtRequestPath.invoice).reply(200, {
+      transactionId: 'test123',
+      invoice: 'invoice123',
+    })
 
     const params: InvoiceParams = {
       amount: 1000,

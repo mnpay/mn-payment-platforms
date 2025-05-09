@@ -9,7 +9,7 @@ export const makeCheckTransactionRequest = useApi<CheckTransactionRequest, Check
       const checksum = await generateTransactionCheckChecksum(data, store.secret)
       const params = { ...data, checksum }
 
-      return api.post(GolomtRequestPath.checkTransaction, params)
+      return api.post(GolomtRequestPath.check, params)
     }
   },
 )

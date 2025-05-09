@@ -1,7 +1,7 @@
 import { z } from 'zod'
-import { errorResponseSchema } from '../schemas/errorResponseSchema'
+import { golomtErrorResponseSchema } from '../schemas/errorResponseSchema'
 
-export type ErrorResponse = z.infer<typeof errorResponseSchema>
+export type ErrorResponse = z.infer<typeof golomtErrorResponseSchema>
 
 /**
  * - 200	Амжилттай болсон гэж үзэн тухайн функцын json форматтай утга ирнэ.
