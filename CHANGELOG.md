@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2](https://github.com/mnpay/mn-payment-platforms/compare/mongolian-payment-platforms-v1.2.1...mongolian-payment-platforms-v1.2.2) (2025-05-19)
+
+
+### Bug Fixes
+
+* bug ([4bcf438](https://github.com/mnpay/mn-payment-platforms/commit/4bcf4383474cfd30298cf8933d159e6f94e3bc3a))
+
 ## [1.2.1](https://github.com/mnpay/mn-payment-platforms/compare/mongolian-payment-platforms-v1.2.0...mongolian-payment-platforms-v1.2.1) (2025-05-05)
 
 
