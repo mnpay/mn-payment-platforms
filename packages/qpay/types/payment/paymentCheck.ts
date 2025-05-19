@@ -1,10 +1,9 @@
 import { Offset } from '../core'
-import { PaymentGetRequestParams } from './paymentGet'
 
 /**
  * Request interface for PaymentCheckRequestParams
  */
-export interface PaymentCheckRequestParams extends PaymentGetRequestParams {
+export interface PaymentCheckRequestParams {
   /**
    * Обьектын төрөл INVOICE: Нэхэмжлэх QR: QR код ITEM: Бүтээгдэхүүн
    * @example 'INVOICE'

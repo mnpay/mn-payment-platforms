@@ -8,14 +8,22 @@ import { z } from 'zod'
  * Access token шинэчлэн авах API.
  * refresh_token -ийг ашиглана.
  */
-export const makeRefreshToken = useQpayApi<RefreshResponse, RefreshRequestParams>((api, { store }) => {
-  return (data) => {
+export const makeRefreshToken = useQpayApi<RefreshResponse, RefreshRequestParams>((api, { store, setStore }) => {
+  return async (data) => {
     const refreshToken = z.string().parse(data.refreshToken ?? store.refreshToken)
 
-    return api.post(QpayRequestPath.refresh, undefined, {
+    const response = await api.post(QpayRequestPath.refresh, undefined, {
       headers: {
         Authorization: `Bearer ${refreshToken}`,
       },
     })
+
+    setStore({
+      accessToken: response.data.access_token,
+      expiresIn: new Date(response.data.expires_in * 1000),
+      refreshToken: response.data.refresh_token,
+    })
+
+    return response
   }
 })

@@ -16,6 +16,7 @@ export const makeCreateAuthenticate = useQpayApi<AuthenticateResponse, Authentic
       setStore({
         accessToken: response.data.access_token,
         expiresIn: new Date(response.data.expires_in * 1000),
+        refreshToken: response.data.refresh_token,
       })
 
       return response

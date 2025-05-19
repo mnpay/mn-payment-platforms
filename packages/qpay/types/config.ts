@@ -6,4 +6,6 @@ export interface QpayConfig {
   accessToken?: string
   refreshToken?: string
   expiresIn?: Date
+  username: string
+  password: string
 }

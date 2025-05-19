@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { type QpayConfig } from './types'
-import { QpayApiVersion, qpayDefaultBaseUrl } from './constants'
+import { QpayApiVersion, qpayDefaultBaseUrl, QpayRequestPath } from './constants'
 import {
   makeCancelInvoice,
   makeCancelPayment,
@@ -11,6 +11,7 @@ import {
   makeGetPayment,
   makeGetPaymentList,
   makeRefreshToken,
+  makeRefundPayment,
 } from './requests'
 import { type Store, type StoreConfig } from './definitions'
 
@@ -52,7 +53,26 @@ export const useQpay = (config: QpayConfig) => {
   const getPayment = makeGetPayment(api, storeConfig)
   const checkPayment = makeCheckPayment(api, storeConfig)
   const cancelPayment = makeCancelPayment(api, storeConfig)
+  const refundPayment = makeRefundPayment(api, storeConfig)
   const getPaymentList = makeGetPaymentList(api, storeConfig)
+
+  api.interceptors.request.use(async (config) => {
+    if (config.url === QpayRequestPath.authenticate || config.url === QpayRequestPath.refresh) {
+      return config
+    }
+
+    if (storeConfig.store.accessToken && storeConfig.store.refreshToken && storeConfig.store.expiresIn) {
+      if (storeConfig.store.expiresIn.getTime() < Date.now()) {
+        await refreshToken({ refreshToken: storeConfig.store.refreshToken })
+      }
+    } else {
+      await authenticate({ username: storeConfig.store.username, password: storeConfig.store.password })
+    }
+
+    config.headers.set('Authorization', `Bearer ${storeConfig.store.accessToken}`)
+
+    return config
+  })
 
   return {
     api,
@@ -97,6 +117,7 @@ export const useQpay = (config: QpayConfig) => {
      * Query Parameter -д qPay payment_id -ийг илгээнэ.
      */
     cancelPayment,
+    refundPayment,
     /**
      * #### Төлбөр төлөлтийн жагсаалт авах
      * customer_id, card_terminal_id, p2p_terminal_id -ийн мэдээллийг qPay merchant web admin-аас эсвэл qPay -ээс авна.

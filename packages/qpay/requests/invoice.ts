@@ -1,6 +1,7 @@
 import { QpayRequestPath } from '@mnpay/qpay/constants'
 import { useQpayApi } from '@mnpay/qpay/lib'
 import { GetOrCancelInvoiceRequestParams, CreateInvoiceRequestParams, InvoiceResponse } from '@mnpay/qpay/types'
+import { parseUrlPath } from '@packages/core/lib/urlPath'
 
 /**
  * #### Төлбөрийн нэхэмжлэл үүсгэх.
@@ -18,7 +19,7 @@ export const makeCreateInvoice = useQpayApi<InvoiceResponse, CreateInvoiceReques
  */
 export const makeGetInvoice = useQpayApi<InvoiceResponse, GetOrCancelInvoiceRequestParams>((api) => {
   return (params) => {
-    return api.get(`${QpayRequestPath.getCheck}/${params.invoice_id}`)
+    return api.get(parseUrlPath(QpayRequestPath.getInvoice, params))
   }
 })
 
@@ -28,6 +29,6 @@ export const makeGetInvoice = useQpayApi<InvoiceResponse, GetOrCancelInvoiceRequ
  */
 export const makeCancelInvoice = useQpayApi<InvoiceResponse, GetOrCancelInvoiceRequestParams>((api) => {
   return (params) => {
-    return api.delete(`${QpayRequestPath.getCheck}/${params.invoice_id}`)
+    return api.delete(parseUrlPath(QpayRequestPath.getInvoice, params))
   }
 })

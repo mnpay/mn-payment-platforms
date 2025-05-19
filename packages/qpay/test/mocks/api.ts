@@ -4,6 +4,8 @@ import { z } from 'zod'
 
 export const qpay = useQpay({
   baseUrl: import.meta.env.VITE_BASE_URL ?? 'https://test.qpay.mn',
+  username: import.meta.env.VITE_USERNAME ?? 'username',
+  password: import.meta.env.VITE_PASSWORD ?? 'password',
 })
 
 const isSandBox = import.meta.env.VITE_SANDBOX === 'true'
@@ -16,7 +18,7 @@ export const env = isSandBox
         VITE_USERNAME: z.string(),
         VITE_PASSWORD: z.string(),
         VITE_INVOICE_CODE: z.string(),
-        VITE_MERCHANT_ID: z.string(),
+        // VITE_MERCHANT_ID: z.string(),
       })
       .parse(import.meta.env)
   : null
