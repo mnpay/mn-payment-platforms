@@ -29,14 +29,14 @@ export interface Line {
    * Урт ихдээ: 255
    * Жишээ: Invoice description
    */
-  line_description?: string
+  line_description: string
   /**
    * Мөрийн тоо хэмжээ
    * Тип: number
    * Хэрэглэхгүй
    * Жишээ: 1
    */
-  line_quantity?: number
+  line_quantity: number
   /**
    * Нэгжийн үнэ
    * Тип: number

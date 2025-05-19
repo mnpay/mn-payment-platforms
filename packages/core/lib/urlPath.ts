@@ -3,7 +3,7 @@ export const parseUrlPath = <T extends string = string, P extends Record<string,
   rawPath: T,
   params?: P,
 ) => {
-  const regex = /:([a-zA-Z0-9]+)/g
+  const regex = /:([_a-zA-Z0-9]+)/g
 
   return rawPath.replace(regex, (_match, key) => {
     const value = typeof params?.[key] === 'string' || typeof params?.[key] === 'number' ? params[key] : ''

@@ -2,7 +2,7 @@ import { defineProject, mergeConfig } from 'vitest/config'
 import { createViteConfig } from './createViteConfig.mjs'
 
 /**
- * @param {import('vitest/config').UserConfig} options
+ * @param {import('vitest/config').UserWorkspaceConfig} options
  */
 export const createVitestConfig = (options = {}) => {
   const config = createViteConfig(options)
