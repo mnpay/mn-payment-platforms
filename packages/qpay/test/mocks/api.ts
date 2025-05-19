@@ -1,5 +1,5 @@
 import MockAdapter from 'axios-mock-adapter'
-import { useQpay } from '@mnpay/qpay/index'
+import { AuthenticateResponse, QpayRequestPath, useQpay } from '@mnpay/qpay/index'
 import { z } from 'zod'
 
 export const qpay = useQpay({
@@ -8,7 +8,7 @@ export const qpay = useQpay({
   password: import.meta.env.VITE_PASSWORD ?? 'password',
 })
 
-const isSandBox = import.meta.env.VITE_SANDBOX === 'true'
+export const isSandBox = import.meta.env.VITE_SANDBOX === 'true'
 
 export const env = isSandBox
   ? z
@@ -24,3 +24,16 @@ export const env = isSandBox
   : null
 
 export const mockApi = import.meta.env.VITE_SANDBOX === 'true' ? null : new MockAdapter(qpay.api)
+
+export const mockAuthenticate = () => {
+  mockApi?.onPost(QpayRequestPath.authenticate).reply(200, {
+    token_type: 'bearer',
+    refresh_expires_in: 0,
+    refresh_token: 'string',
+    access_token: 'string',
+    expires_in: 0,
+    scope: 'string',
+    'not-before-policy': '0',
+    session_state: 'string',
+  } satisfies AuthenticateResponse)
+}

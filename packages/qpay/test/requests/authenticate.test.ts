@@ -1,5 +1,4 @@
-import { QpayRequestPath } from '@mnpay/qpay/constants'
-import { env, mockApi, qpay } from '@mnpay/qpay/test/mocks/api'
+import { env, mockAuthenticate, qpay } from '@mnpay/qpay/test/mocks/api'
 import { AuthenticateResponse } from '@mnpay/qpay/types'
 
 describe('Authenticate', () => {
@@ -9,16 +8,7 @@ describe('Authenticate', () => {
       password: env?.VITE_PASSWORD ?? 'password',
     }
 
-    mockApi?.onPost(QpayRequestPath.authenticate).reply(200, {
-      token_type: 'bearer',
-      refresh_expires_in: 0,
-      refresh_token: 'string',
-      access_token: 'string',
-      expires_in: 0,
-      scope: 'string',
-      'not-before-policy': '0',
-      session_state: 'string',
-    } satisfies AuthenticateResponse)
+    mockAuthenticate()
 
     const response = await qpay.authenticate(params)
 
