@@ -1,8 +1,8 @@
-import { type QpayApiVersion } from '@mnpay/qpay/constants'
+export type QpayApiVersionType = `v${number}`
 
 export interface QpayConfig {
   baseUrl?: string
-  version?: QpayApiVersion
+  version?: QpayApiVersionType
   accessToken?: string
   refreshToken?: string
   expiresIn?: Date
